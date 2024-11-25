@@ -28,48 +28,16 @@ This repository contains two main modules:
 
 ---
 
-## **Usage**
-
-### Module 1: `tariHashing.py`
-
-#### **Description**  
-Handles anonymous ID (`anon_id`) conversion to a hashed Base58 string. Your anon_id is found in your app_config.json file of Tari Universe
-
-#### **Class: `anonIdOperations`**
-**Methods**:
-- **`anonToBase58(anonId: str) -> str`**  
-  Converts a single `anon_id` to its hashed Base58 Monero representation.
-
-- **`anonListToBase58(anonIdList: list) -> list`**  
-  Converts a list of `anon_id`s to their hashed Base58 Monero representations.
-
-
-markdown
-Copy code
-# Tari Block Tools
-
-A Python library for working with Tari Universe data, including converting anonymous IDs to Blake2b hashed Base58 Monero encoded strings and interacting with Tari block explorer.
-
----
-
 ## **Project Overview**
 
 This repository contains two main modules:
 
 1. **`tariHashing.py`**
    - Converts anonymous IDs (`anon_id`) into Blake2b hashed Base58 Monero encoded strings using a Rust-backed hashing module.
-   - **Author**: Kyle Strycharz  
-   - **Version**: 1.0.0  
-   - **Last Modified**: 11/24/24  
-   - **Python Version**: 3.13.0  
 
 2. **`tariblockexplorer.py`**
    - Interfaces with the Tari block explorer (`textexplore-nextnet.tari.com`) to retrieve block information, outputs, and miner details.
-   - **Author**: Kyle Strycharz  
-   - **Version**: 1.0.0  
-   - **Last Modified**: 11/24/24  
-   - **Python Version**: 3.13.0  
-
+  
 ---
 
 ## **Dependencies**
