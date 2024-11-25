@@ -1,0 +1,13 @@
+[package]
+name = "tari_hashing"  # Replace this with your package name
+version = "0.1.0"                    # Replace this with your desired version
+edition = "2018"                     # Use the 2018 edition (common for modern Rust)
+
+[dependencies]
+pyo3 = { version = "0.18", features = ["extension-module"] }
+base58 = "0.1"
+blake2 = "0.10.6"
+tari_utilities = "0.8"
+
+[lib]
+crate-type = ["cdylib"]

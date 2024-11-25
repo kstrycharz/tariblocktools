@@ -1,0 +1,13 @@
+C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\deps\libpyo3_build_config-92945307646bc91c.rmeta: C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\lib.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\errors.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\impl_.rs C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config-file.txt C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config.txt
+
+C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\deps\libpyo3_build_config-92945307646bc91c.rlib: C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\lib.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\errors.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\impl_.rs C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config-file.txt C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config.txt
+
+C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\deps\pyo3_build_config-92945307646bc91c.d: C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\lib.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\errors.rs C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\impl_.rs C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config-file.txt C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config.txt
+
+C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\lib.rs:
+C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\errors.rs:
+C:\Users\Kyle\.cargo\registry\src\index.crates.io-6f17d22bba15001f\pyo3-build-config-0.18.3\src\impl_.rs:
+C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config-file.txt:
+C:\Users\Kyle\Desktop\Tari-DiscordBot\rust\target\release\build\pyo3-build-config-aee6f5723771e768\out/pyo3-build-config.txt:
+
+# env-dep:OUT_DIR=C:\\Users\\Kyle\\Desktop\\Tari-DiscordBot\\rust\\target\\release\\build\\pyo3-build-config-aee6f5723771e768\\out
