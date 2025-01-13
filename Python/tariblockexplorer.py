@@ -1,9 +1,9 @@
 """
 File: tariblockexplorer.py 
 Author: Kyle Strycharz                                                                                                               
-Last Modified: 11/24/24     
+Last Modified: 1/12/2024   
 Python: 3.13.0                                              
-Version: 1.0.0
+Version: 1.1.0
  
 
                                                       
@@ -26,6 +26,8 @@ Mutiple methods are avaliable. Including:
         - getCoinbaseInfo(int blockNumber) - Retrieves information about each miner's Coinbase Extra Data for a given block in cleartext
         - decodeString(int blockNumber) - decodes a hex string in this format [aa, bb, cc, dd, ...] into a cleartext string
         - printList(int blockNumber) - used to print a list in an organizaed way (DEBUGGING)
+        - getBlockPages() - returns a list of additional links with url endpoints with more outputs assosicated with a block. blocks/<blocknum>
+        returns only the first 9 outputs. The additional pages cover the rest. (outputsNextLink value when /block is returned)
 
 **Any function starting with a get, returns a list. This allows for app builders to manipulate data how they like
 
@@ -38,6 +40,7 @@ Implement class into your applicaiton. See test cases at botom of this file
 """
 
 import requests
+
 
 
 class tariBLockExplorer:
@@ -82,24 +85,65 @@ class tariBLockExplorer:
             blockInfo = f"Failed to retrieve information on block #{blockNumber}"
 
 
-        #print(blockInfo)
+   
         
         return blockInfo
+    
+
+    #Returns a list of additional links for block outputs. /block on api only responds with first 9. The rest are generated on additional pages
+    def getBlockPages(self, link):
+
+        #link = "86219?outputs_from=20&outputs_to=30&inputs_from=0&inputs_to=10&kernels_from=0&kernels_to=Na"
+        
+        # QUERY BLOCK
+        
+
+        blockLinks = []
+        blockLinks.append(link)
+        blockInfo = self.getBlockInfo(link)
+
+        while blockInfo["body"]["outputsNextLink"] is not None:
+           
+            outputsNextLink = blockInfo["body"]["outputsNextLink"]
+            newLink = outputsNextLink.split("/blocks/")[1] if "/blocks/" in outputsNextLink else ""
+            blockLinks.append(newLink)
+            blockInfo = self.getBlockInfo(newLink)
+
+        return blockLinks
+        
 
     #Returns a json  list of miners who miner a block
     def getBlockOutputs(self, blockNumber):
 
-        blockInfo = self.getBlockInfo(blockNumber)
+        blockLinks = self.getBlockPages(blockNumber)
+        #print(blockLinks)
+        outputsList = []
+
+        for link in blockLinks:
+            #print(link)
+            blockInfo = self.getBlockInfo(link)
         
-        if type(blockInfo) == str:
-            return blockInfo
+            if type(blockInfo) == str:
+                return blockInfo
 
-        try:
-            outputsList = blockInfo["body"]["outputs"]
-        except KeyError as e:
-            return f"Key {e} not found in block info"
+            outputsData = blockInfo["body"]["outputs"]
 
+            for output in outputsData:
+                outputsList.append(output)
+            #try:
+            #    outputsList.append(blockInfo["body"]["outputs"])
+            #except KeyError as e:
+            #    return f"Key {e} not found in block info"
+        #print(len(outputsList))
         return outputsList
+
+
+
+
+                
+               
+
+
 
 
     #Parses Miner info from block info. Returns a list of kernels responsible
@@ -108,8 +152,10 @@ class tariBLockExplorer:
         miners = []
 
 
-        
+       
         outputList = self.getBlockOutputs(blockNumber)
+        
+        
         
         for x in range (len(outputList)):
 
@@ -117,6 +163,7 @@ class tariBLockExplorer:
             try:
                 miners.append(outputList[x]["features"])
             except KeyError as e:
+                
                 return f"Key {e} not found in block output info"
             except TypeError as e:
                 return f"outputList is a {e} Variabel passes is not a List error. Invalid blockOutput info."
@@ -140,13 +187,16 @@ class tariBLockExplorer:
 
         coinbaseDecoded = []
 
-
-
+        
+ 
 
         for x in range(len(miners)):
-
+            temp = miners[x]["coinbase_extra"]["data"]
             try:
+                
+                
                 temp = miners[x]["coinbase_extra"]["data"]
+                
             except Exception as e:
                 return f"temp has {e}"
             except KeyError as e:
@@ -180,13 +230,8 @@ class tariBLockExplorer:
 
     #Prints a list, for Debugging only. Each item is seperated by a line.
     #Make more organizaed
-    def printList(self, list):
-        
-        
-        for out in list:
-            print(out)
-            print()
-        
+  
+  
 
 # TEST CASES
 
@@ -197,11 +242,11 @@ class tariBLockExplorer:
 
 #Get ouput of block
 
-#print(test.getCoinbaseInfo(50000))
-#print(test.getMinerInfo(51871))
-#print(test.getCoinbaseInfo(51871))
-
-
+#print(test.getBlockOutputs(86219))
+#test.getBlockOutputs(86219)
+#print(test.getMinerInfo(86219))
+#print(test.getCoinbaseInfo(86219))
+#print(test.getBlockPages(86219))
 
 
 
