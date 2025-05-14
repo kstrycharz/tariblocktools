@@ -1,3 +1,6 @@
+##EXAMPLE FOR QUERYING ENTIRE BLOCK EXPLORER FOR WHAT BLOCKS YOU WON via ANONID
+
+
 import tariblockexplorer
 import tariHashing
 
