@@ -46,8 +46,8 @@ import requests
 class tariBLockExplorer:
 
     #Initialize critical variables
-    mainSite_url = "https://textexplore-nextnet.tari.com"
-    blockExplorer_url = "https://textexplore-nextnet.tari.com/blocks/"
+    mainSite_url = "https://textexplore.tari.com"
+    blockExplorer_url = "https://textexplore.tari.com/blocks/"
     addJson = "?&json"
     
 
@@ -245,19 +245,5 @@ class tariBLockExplorer:
 #print(test.getBlockOutputs(86219))
 #test.getBlockOutputs(86219)
 #print(test.getMinerInfo(86219))
-#print(test.getCoinbaseInfo(86219))
-#print(test.getBlockPages(86219))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#print(test.getCoinbaseInfo(219))
+#print(test.getBlockPages(1106))
